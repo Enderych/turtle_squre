@@ -12,6 +12,6 @@ COPY ./drawsquare.sh /
 COPY rosdisplay /rosdisplay
 RUN ls
 
-RUN /bin/bash ./build.sh
+#RUN /bin/bash ./build.sh
 
 
