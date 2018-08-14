@@ -7,7 +7,6 @@
     <node pkg="rosdisplay" name="sim" type="turtlesim_node"/>
   </group>
 
-
   <node pkg="rosdisplay" name="tele" type="turtle_teleop_key">
   <remap from="/turtle1/cmd_vel" to="/turtlesim1/turtle1/cmd_vel"/>
   </node>
@@ -19,3 +18,4 @@
   </node>
 
 </launch>
+//keyboardcontrol
