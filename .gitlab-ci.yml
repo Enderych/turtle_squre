@@ -4,7 +4,7 @@ image: docker:dind
 
 before_script:
   - echo "to login"
-  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN  u16-vbw2:4567
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN  u-172-c102:4567
    
 after_script:
   - echo "After script section"
@@ -14,14 +14,14 @@ build1:
   stage: build
   script:
     - echo "Do your build here"
-    - docker build -t u16-vbw2:4567/root/citest .
-    - docker push u16-vbw2:4567/root/citest
+    - docker build -t u-172-c102:4567/root/turtle_squre .
+    - docker push u-172-c102:4567/root/turtle_squre
    
 test1:
   stage: test
   script: 
     - echo "Do a test here"
-   
+  
 test2:
   stage: test
   script: 
@@ -31,4 +31,4 @@ deploy1:
   stage: deploy
   script:
     - echo "Do your deploy here"
-    - docker service update --image $(docker inspect --type image --format '{{index .RepoDigests 0}}' u16-vbw2:4567/root/citest:latest) citest 
+    - docker service update --image $(docker inspect --type image --format '{{index .RepoDigests 0}}' u-172-c102:4567/root/turtle_squre
